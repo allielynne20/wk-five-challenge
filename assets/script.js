@@ -33,13 +33,13 @@ $(document).ready(function () {
 
     updateHour();
 
-    // var interval = setInterval(updateHour, 15000);
+    var interval = setInterval(updateHour, 15000);
 
-    var interval = function () {
-        setInterval(updateHour, 15000);
-    };
+    // var interval = function () {
+    //     setInterval(updateHour, 15000);
+    // };
 
-    interval();
+    // interval();
 
 
     $("#eight-block .description").val(localStorage.getItem("eight-block"));
