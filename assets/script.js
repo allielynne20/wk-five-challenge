@@ -6,15 +6,15 @@ $(document).ready(function () {
         localStorage.setItem(time, todoTask);
     });
 
-    var tasks = [];
+    // var tasks = [];
 
     var currentDay = document.getElementById("currentDay");
     currentDay.innerHTML = moment().toString();
     console.log(currentDay);
 
-    var updateHour = function() {
+    var updateHour = function () {
         var currentHour = moment().hours();
-        $(".time-block").each(function() {
+        $(".time-block").each(function () {
             var blockHour = $(this).attr("id");
             if (blockHour < currentHour) {
                 $(this).addClass("past");
@@ -29,14 +29,32 @@ $(document).ready(function () {
                 $(this).addClass("future");
             }
         })
-    }
+    };
 
     updateHour();
 
-    var interval = setInterval(updateHour, 15000);
+    // var interval = setInterval(updateHour, 15000);
 
+    var interval = function () {
+        setInterval(updateHour, 15000);
+    };
+
+    interval();
+
+
+    $("#eight-block .description").val(localStorage.getItem("eight-block"));
     $("#nine-block .description").val(localStorage.getItem("nine-block"));
-})
+    $("#ten-block .description").val(localStorage.getItem("ten-block"));
+    $("#eleven-block .description").val(localStorage.getItem("eleven-block"));
+    $("#twelve-block .description").val(localStorage.getItem("twelve-block"));
+    $("#one-block .description").val(localStorage.getItem("one-block"));
+    $("#two-block .description").val(localStorage.getItem("two-block"));
+    $("#three-block .description").val(localStorage.getItem("three-block"));
+    $("#four-block .description").val(localStorage.getItem("four-block"));
+    $("#five-block .description").val(localStorage.getItem("five-block"));
+    $("#six-block .description").val(localStorage.getItem("six-block"));
+
+});
 
 
 // var textField = document.getElementById("todo");
